@@ -5,26 +5,41 @@
  * tener un nombre, un email y un teléfono.
  */
 
+/*let agenda = {
+  nombre: "Daniel",
+  telefono: "5514410475",
+  email: "danielfranco72@hotmail.com"
+}
+*/
+/*
 class agenda{
-    constructor(nombre, email, telefono){
-      this.nombre = nombre;
-      this.email = email;
-      this.telefono = telefono;    
-    }
-    agregar(){
-      
-    }
-    /*eliminar(){
-      
-      
-    }
-    buscar(){
-      
-    }*/
+  constructor(nombre, telefono, email){
+    this.nombre = nombre;
+    this.telefono = telefono;
+    this.email = email;
   }
-  
-  const persona1 = new agenda("Daniel Franco", "danielfranco72@hotmail.com", "5514410475");
-  console.log(persona1)
-  
-  
-  
+  static agregar(name, tel, correo){
+    return new agenda(name, tel, correo);
+  }
+}
+nuevo = agenda.agregar("Daniel", "5514410475", "danielfranco72@hotmail.com");
+console.log(nuevo);
+*/
+
+class agenda{
+  constructor(nombre, telefono, email){
+    this.nombre = nombre;
+    this.telefono = telefono;
+    this.email = email;
+  }
+  static agregar(name, tel, correo){
+    return new agenda(name, tel, correo);
+  }
+}
+
+agendas = [agenda.agregar("Daniel", "5514410475", "danielfranco72@hotmail.com"),
+          agenda.agregar("Deniel", "5514410475", "danielfranco72@hotmail.com"),
+          agenda.agregar("Jony", "5514410475", "danielfranco72@hotmail.com")];
+console.log(agendas);
+agendas.push (agenda.agregar("Gordo", "5514410475", "danielfranco72@hotmail.com"))
+console.log(agendas);
